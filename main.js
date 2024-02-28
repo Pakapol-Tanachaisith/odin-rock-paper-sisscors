@@ -9,27 +9,63 @@ function playRound(playerSelection, computerSelection) {
   const playerChose = playerSelection.toLowerCase();
   const computerChose = computerSelection.toLowerCase();
 
-  const textMap = {
-    win: `You win! ${playerChose} beats ${computerChose}`,
-    tie: "It's a tie!",
-    lose: `You lose! ${computerChose} beats ${playerChose}`,
-  };
-
   if (playerChose === computerChose) {
-    return textMap.tie;
+    return "tie";
   }
 
   if (playerChose === "rock") {
-    return computerChose === "scissors" ? textMap.win : textMap.lose;
+    return computerChose === "scissors" ? "win" : "lose";
   }
 
   if (playerChose === "paper") {
-    return computerChose === "rock" ? textMap.win : textMap.lose;
+    return computerChose === "rock" ? "win" : "lose";
   }
 
   if (playerChose === "scissors") {
-    return computerChose === "paper" ? textMap.win : textMap.lose;
+    return computerChose === "paper" ? "win" : "lose";
   }
 }
 
-console.log(playRound("scissors", getComputerChoice()));
+for (let i = 1; i >= 5; i++) {
+  console.log(i);
+}
+
+function playGame() {
+  console.log("playing game");
+  let playerScore = 0;
+  let computerScore = 0;
+
+  const textMap = {
+    win: "You win!",
+    tie: "It's a tie!",
+    lose: "You lose!",
+  };
+
+  for (let i = 1; i <= 5; i++) {
+    const userChose = prompt(`[Round ${i}] Rock, Paper, or Scissors?`);
+    const computerChose = getComputerChoice();
+    console.log({ userChose, computerChose });
+    const roundResult = playRound(userChose, computerChose);
+
+    if (roundResult === "win") {
+      playerScore++;
+    }
+    if (roundResult === "lose") {
+      computerScore++;
+    }
+
+    console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
+  }
+
+  let gameResult;
+  if (playerScore > computerScore) {
+    gameResult = "win";
+  } else if (playerScore === computerScore) {
+    gameResult = "tie";
+  } else {
+    gameResult = "lose";
+  }
+
+  return alert(textMap[gameResult]);
+}
+playGame();
