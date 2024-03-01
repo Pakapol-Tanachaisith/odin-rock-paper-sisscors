@@ -3,9 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock, Paper, Scissors</title>
   </head>
   <body>
+    <div class="container">
+      <section class="score-board">
+        <div>
+          <p>Player Score: <span>0</span></p>
+        </div>
+        <div>
+          <p>Computer Score: <span>0</span></p>
+        </div>
+      </section>
+
+      <section class="result-board">
+        <img src="images/user.svg" alt="user" width="150" height="150" />
+        <p class="vs">VS</p>
+        <img src="images/robot.svg" alt="robot" width="150" height="150" />
+      </section>
+
+      <section class="rps">
+        <h1>-Please Select-</h1>
+        <div class="btn-wrapper">
+          <button id="rock" aria-label="rock">
+            <img src="images/rock.svg" alt="rock" width="50" />
+          </button>
+          <button id="paper" aria-label="paper">
+            <img src="images/paper.svg" alt="rock" width="50" />
+          </button>
+          <button id="scissors" aria-label="scissors">
+            <img src="images/scissors.svg" alt="scissors" width="50" />
+          </button>
+        </div>
+      </section>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>

@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.result-board {
+  height: 300px;
+  width: 700px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+
+.vs {
+  font-size: 100px;
+  font-weight: 900;
+  font-family: "Nothing You Could Do", cursive;
+  color: red;
+}
+
+.rps {
+  margin: 0 auto;
+  width: fit-content;
+  border: 1px solid black;
+  padding: 24px 72px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.rps > h1 {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.btn-wrapper {
+  display: flex;
+  gap: 32px;
+}
+.btn-wrapper > button {
+  border: none;
+  background: transparent;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 12px;
+}
+.btn-wrapper > button:hover {
+  transform: scale(1.15);
+  transition: all 0.25s;
+}
